@@ -29,7 +29,8 @@
 			"extensions": [
 				"bungcip.better-toml",
 				"davidanson.vscode-markdownlint",
-				"GitHub.vscode-github-actions"
+				"GitHub.vscode-github-actions",
+				"GitHub.copilot"
 			]
 		}
 	},
@@ -43,5 +44,9 @@
 	// "postCreateCommand": "uname -a",
 
 	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "node"
+	"remoteUser": "node",
+	// 
+	"mounts": [
+		"type=bind,source=${localEnv:HOME}/.ssh,target=${localEnv:HOME}/.ssh,type=bind,consistency=cached"
+	]
 }
